@@ -16,7 +16,7 @@ const fs = require("fs");
 const path = require("path");
 
 /* ───────── 설정 (배포 전 본인 값으로 ↓) ───────── */
-const SITE      = "https://YOURNAME.github.io/thatmeme"; // 배포 주소, 끝에 / 없이
+const SITE      = "https://thatmeme.onlyonecorpceo.workers.dev/"; // 배포 주소, 끝에 / 없이
 const SITE_NAME = "ThatMeme";
 const GA_ID     = "G-XXXXXXXXXX";                        // GA4 측정 ID
 const CONTACT   = "onlyonecorpceo@gmail.com";
