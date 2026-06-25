@@ -434,6 +434,10 @@ fs.writeFileSync(path.join(OUT, "index.html"), indexHtml);
 fs.copyFileSync(path.join(ROOT, "memes.js"), path.join(OUT, "memes.js"));
 fs.copyFileSync(path.join(ROOT, "categories.js"), path.join(OUT, "categories.js"));
 
+// Google Search Console 인증 파일(googleXXXX.html)이 루트에 있으면 dist 로 복사
+fs.readdirSync(ROOT).filter(f=>/^google[0-9a-f]+\.html$/i.test(f))
+  .forEach(f=>fs.copyFileSync(path.join(ROOT,f), path.join(OUT,f)));
+
 console.log(`✅ 생성 완료 → ${OUT}/`);
 console.log(`   밈 페이지: ${count}개, 카테고리: ${catCount}개, + index/explore/sitemap/robots/style`);
 if (SITE.includes("YOURNAME")) console.log(`   ⚠️  build.js 상단 SITE 주소를 본인 배포 주소로 바꾸세요 (sitemap/canonical 에 쓰임).`);
